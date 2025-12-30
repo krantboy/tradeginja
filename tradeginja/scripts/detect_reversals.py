@@ -64,7 +64,7 @@ def main():
     parser = argparse.ArgumentParser(description="Detect reversals in stock tickers using Tradeginja.")
     parser.add_argument("--tickers", nargs="+", required=True, help="Ticker symbols (e.g., AAPL TSLA)")
     parser.add_argument("--days-back", type=int, default=180, help="Days back from end date (default: 180)")
-    parser.add_argument("--end-date", type=str, default="2025-03-29", help="End date (YYYY-MM-DD, default: 2025-03-29)")
+    parser.add_argument("--end-date", type=str, default=datetime.now().strftime("%Y-%m-%d"), help="End date (YYYY-MM-DD, default: today)")
     parser.add_argument("--data-key", type=str, default="stock_data.csv",
                         help="Base filename for data (default: stock_data.csv)")
     parser.add_argument("--signal-key", type=str, default="signals.csv",
